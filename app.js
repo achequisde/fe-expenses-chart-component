@@ -1,6 +1,6 @@
 const request = new XMLHttpRequest();
 
-request.open('GET', 'data.json', true);
+request.open('GET', './data.json', true);
 
 request.onreadystatechange = function () {
     if (request.readyState == XMLHttpRequest.DONE) {
