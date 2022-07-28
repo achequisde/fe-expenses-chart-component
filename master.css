@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+@import url('./styles/summary.css');
+@import url('./styles/spending.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 10px;
+
+    --clr-body-bg:     hsl(27,  66%,  92%);
+    --clr-summary-bg:  hsl(10,  79%,  65%);
+    --clr-spending-bg: hsl(33,  100%, 98%);
+
+    --clr-dark-brown:  hsl(25,  47%,  15%);
+    --clr-med-brown:   hsl(28,  10%,  53%);
+    --clr-cyan:        hsl(186, 34%,  60%);
+
+    --font-size-body: 2.2rem;
+
+    --font-wght-normal: 400;
+    --font-wght-bold:   700;
+}
+
+body {
+    background-color: var(--clr-body-bg);
+
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+body > * {
+    margin: 1rem;
+}

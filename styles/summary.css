@@ -1,0 +1,29 @@
+.summary {
+    color: white;
+    background-color: var(--clr-summary-bg);
+
+    width: 325px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5rem 2rem;
+
+    border-radius: 1rem;
+}
+
+.summary__logo {
+    width: 20%;
+}
+
+.summary__balance__text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.summary__balance__number {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-wght-bold);
+}

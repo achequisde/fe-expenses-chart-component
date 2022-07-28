@@ -1,0 +1,55 @@
+.spending {
+    background-color: var(--clr-spending-bg);
+
+    width: 325px;
+    padding: 2rem;
+
+    border-radius: 1rem;
+}
+
+.spending__title {
+    font-size: 2.4rem;
+}
+
+.spending__chart {
+    padding: 2rem 0;
+}
+
+.spending__total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--clr-body-bg);
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.spending__total__total__text {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.spending__total__total__amount {
+    font-size: 2.4rem;
+}
+
+.spending__total__change__ratio {
+    font-size: 1.4rem;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+.spending__total__change__text {
+    font-size: 1.4rem;
+}
+
+.spending--white-text {
+    color: var(--clr-med-brown);
+}
+
+.spending--brown-text {
+    color: var(--clr-dark-brown);
+}
+
+.spending--bold-text {
+    font-weight: var(--font-wght-bold);
+}

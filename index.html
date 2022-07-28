@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="master.css">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+    <header class="summary">
+      <div class="summary__balance">
+        <p class="summary__balance__text">My balance</p>
+        <p class="summary__balance__number">$921.48</p>
+      </div>
+      <img class="summary__logo" src="./images/logo.svg" alt="">
+    </header>
+
+    <section class="spending">
+      
+      <h2 class="spending__title spending--brown-text">Spending - Last 7 days</h2>
+
+      <div class="spending__chart">
+        <canvas id="spending__chart__bars" width="400" height="300"></canvas>
+      </div>
+
+      <div class="spending__total">
+        <div class="spending__total__total">
+          <p class="spending__total__total__text spending--white-text">Total this month</p>
+          <p class="spending__total__total__amount spending--brown-text spending--bold-text">$478.33</p>
+        </div>
+        <div class="spending__total__change">
+          <p>&nbsp;</p>
+          <p class="spending__total__change__ratio spending--brown-text spending--bold-text">+2.4%</p>
+          <p class="spending__total__change__text spending--white-text">from last month</p>
+        </div>
+      </div>
+    </section>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
