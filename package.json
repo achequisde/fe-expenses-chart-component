@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/achequisde/fe-expenses-chart-component/issues"
   },
-  "homepage": "https://achequisde.github.io/fe-expenses-chart-component"
+  "homepage": "https://achequisde.github.io/fe-expenses-chart-component",
+  "dependencies": {
+    "chart.js": "^3.8.2"
+  }
 }

@@ -1,55 +1,93 @@
 .spending {
-    background-color: var(--clr-spending-bg);
+  background-color: var(--clr-spending-bg);
 
-    width: 325px;
-    padding: 2rem;
+  width: 325px;
+  padding: 2rem;
 
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .spending__title {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
 .spending__chart {
-    padding: 2rem 0;
+  padding: 4rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.spending__chart__bar {
+  position: relative;
+  width: 400px;
+  height: 150px;
+}
+
+.spending__chart__bar:hover > * {
+  display: block;
+}
+
+.spending__chart__bar__tooltip {
+  position: absolute;
+  background-color: var(--clr-dark-brown);
+  color: white;
+  border-radius: 4px;
+  padding: 4px;
+  left: -4px;
+  font-weight: var(--font-wght-bold);
+  display: none;
+}
+
+.spending__chart__bar__amount {
+  position: absolute;
+  bottom: 10px;
+  border-radius: 4px;
+}
+
+.spending__chart__bar__label {
+  position: absolute;
+  width: 30px;
+  text-align: center;
+  color: var(--clr-med-brown);
+  bottom: -10px;
 }
 
 .spending__total {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid var(--clr-body-bg);
-    padding-top: 2rem;
-    padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--clr-body-bg);
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 .spending__total__total__text {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .spending__total__total__amount {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
 .spending__total__change__ratio {
-    font-size: 1.4rem;
-    text-align: right;
-    margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  text-align: right;
+  margin-bottom: 0.5rem;
 }
 
 .spending__total__change__text {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .spending--white-text {
-    color: var(--clr-med-brown);
+  color: var(--clr-med-brown);
 }
 
 .spending--brown-text {
-    color: var(--clr-dark-brown);
+  color: var(--clr-dark-brown);
 }
 
 .spending--bold-text {
-    font-weight: var(--font-wght-bold);
+  font-weight: var(--font-wght-bold);
 }

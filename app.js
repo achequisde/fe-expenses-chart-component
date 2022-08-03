@@ -1,81 +1,57 @@
-const request = new XMLHttpRequest();
+"use strict";
 
-request.open('GET', './data.json', true);
+async function getDataFromJSON() {
+    let file = await fetch('./data.json');
+    let data = await file.json();
 
-request.onreadystatechange = function () {
-    if (request.readyState == XMLHttpRequest.DONE) {
-        if (request.status === 200) {
-            const data = JSON.parse(request.responseText);
-            main(data);
-        }
+    return data;
+}
+
+async function createBarChart() {
+    let spendingByDay = await getDataFromJSON();
+
+    let currentDay = new Date().toDateString().split(' ')[0].toLowerCase();
+
+    let currentDayColor = 'hsl(186, 34%, 60%)';  // Cyan
+    let dayColor        = 'hsl(10,  79%, 65%)';  // Red
+
+    let chartDiv = document.querySelector('.spending__chart');
+
+    for (let entry of spendingByDay) {
+        let newBar = createBar(entry.day, entry.amount);
+
+        newBar.children[1].style.backgroundColor = entry.day == currentDay
+            ? currentDayColor
+            : dayColor;
+
+        chartDiv.appendChild(newBar);
     }
 }
 
-request.send();
+function createBar(day, amount) {
+    let containerDiv = document.createElement('div');
 
-// jsonData is an array of objects of the form:
-//
-// object = {
-//     day: String,
-//     amount: Int,
-// }
+    let tooltipDiv   = document.createElement('div');
+    let barDiv       = document.createElement('div');
+    let labelDiv     = document.createElement('div');
 
-function main(jsonData) {
-    let labels = jsonData.map(elem => elem.day);
-    let data   = jsonData.map(elem => elem.amount);
+    tooltipDiv.textContent = '$' + amount;
+    labelDiv.textContent   = day;
 
-    let softRed = 'hsl(10, 79%, 65%)';
-    let cyan = 'hsl(186, 34%, 60%)';
+    tooltipDiv.style.bottom = amount * 2.5 + 15 + 'px';
 
-    const ctx = document.getElementById('spending__chart__bars').getContext('2d');
+    barDiv.style.height = amount * 2.5 + 'px';
+    barDiv.style.width  = '30px';
 
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [{
-                label: '',
-                data,
-                backgroundColor: [
-                    softRed,
-                    softRed,
-                    cyan,
-                    softRed,
-                    softRed,
-                    softRed,
-                    softRed,
-                ],
-                borderRadius: 5,
-                borderSkipped: false,
-                barPercentage: 1.2,
-                categoryPercentage: 0.65,
-            }]
-        },
-        options: {
-            plugins: {
-                legend: {
-                    display: false,
-                },
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false,
-                        drawBorder: false,
-                    },
-                    ticks: {
-                        font: {
-                            family: 'DM Sans',
-                        }
-                    }
-                },
-                y: {
-                    display: false,
-                    grid: {
-                        display: false,
-                    }
-                }
-            }
-        }
-    });
+    containerDiv.classList.add('spending__chart__bar');
+
+    tooltipDiv.classList.add('spending__chart__bar__tooltip');
+    barDiv.classList.add('spending__chart__bar__amount');
+    labelDiv.classList.add('spending__chart__bar__label');
+
+    containerDiv.append(tooltipDiv, barDiv, labelDiv);
+
+    return containerDiv;
 }
+
+createBarChart();

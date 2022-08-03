@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <link rel="stylesheet" href="master.css">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+    <link rel="stylesheet" href="master.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Expenses chart component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+     .attribution { font-size: 11px; text-align: center; }
+     .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
 
     <header class="summary">
       <div class="summary__balance">
@@ -27,11 +27,11 @@
     </header>
 
     <section class="spending">
-      
+
       <h2 class="spending__title spending--brown-text">Spending - Last 7 days</h2>
 
       <div class="spending__chart">
-        <canvas id="spending__chart__bars" width="400" height="300"></canvas>
+        <!-- 400 widht, 250 height -->
       </div>
 
       <div class="spending__total">
@@ -47,13 +47,13 @@
       </div>
     </section>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js"></script>
-  <script src="./app.js"></script>
-</body>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script src="./node_modules/chart.js/dist/chart.js"></script>
+    <script src="./app.js" type="module"></script>
+  </body>
 </html>
