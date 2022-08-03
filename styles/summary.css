@@ -2,7 +2,7 @@
     color: white;
     background-color: var(--clr-summary-bg);
 
-    width: 325px;
+    width: var(--component-width);
     height: 80px;
 
     display: flex;

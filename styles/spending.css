@@ -1,7 +1,7 @@
 .spending {
   background-color: var(--clr-spending-bg);
 
-  width: 325px;
+  width: var(--component-width);
   padding: 2rem;
 
   border-radius: 1rem;
@@ -12,9 +12,9 @@
 }
 
 .spending__chart {
-  padding: 4rem 0 2rem;
+  padding: 4rem 0 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
 }
 
@@ -22,6 +22,8 @@
   position: relative;
   width: 400px;
   height: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 .spending__chart__bar:hover > * {
@@ -34,9 +36,9 @@
   color: white;
   border-radius: 4px;
   padding: 4px;
-  left: -4px;
   font-weight: var(--font-wght-bold);
   display: none;
+  font-size: 1.2rem;
 }
 
 .spending__chart__bar__amount {
@@ -51,6 +53,7 @@
   text-align: center;
   color: var(--clr-med-brown);
   bottom: -10px;
+  font-size: 1rem;
 }
 
 .spending__total {

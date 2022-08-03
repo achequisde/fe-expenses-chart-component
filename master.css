@@ -24,6 +24,8 @@
 
   --font-wght-normal: 400;
   --font-wght-bold:   700;
+
+  --component-width: 345px;
 }
 
 body {
